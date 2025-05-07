@@ -1,0 +1,227 @@
+/* Base styles */
+body {
+  background-color: rgb(52, 188, 198);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.todo-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.task-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4d7cfe;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9ffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.task.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-message {
+  margin-top: 10px;
+  color: green;
+  font-size: 14px;
+}
+
+/* Table styles */
+.task-table-wrapper {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.task-table-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.task-scrollable-table {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.task-table th {
+  background-color: #f9f9f9;
+}
+
+.completed td {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* App layout */
+.todo-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.task-form-card,
+.task-list-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-form-card {
+  width: 100%;
+  max-width: 350px;
+  flex: 1;
+}
+
+.task-list-card {
+  flex: 2;
+  min-width: 300px;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-table-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .task-form-card,
+  .task-list-card {
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-form input,
+  .task-form button {
+    font-size: 16px;
+  }
+
+  .task-table th,
+  .task-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .task-form-card,
+  .task-list-card {
+    padding: 15px;
+  }
+}
+
+.description-card {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  z-index: 9999;
+}
+
+.description-card button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
